@@ -7,6 +7,8 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 import java.awt.Font;
+import java.awt.Toolkit;
+
 import javax.swing.border.LineBorder;
 import java.awt.Color;
 import javax.swing.JButton;
@@ -50,6 +52,8 @@ public class digitalClockGUI extends JFrame {
 	 * Create the frame.
 	 */
 	public digitalClockGUI() {
+		setTitle("Clean Clock");
+		setIconImage(Toolkit.getDefaultToolkit().getImage(digitalClockGUI.class.getResource("alarmClockIcon.png")));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
@@ -79,6 +83,7 @@ public class digitalClockGUI extends JFrame {
 		lblAlarm.setBounds(0, 0, 265, 117);
 		lblAlarm.setHorizontalAlignment(SwingConstants.CENTER);
 		alarmPanel.add(lblAlarm);
+		
 		panel_setAlarm.setBorder(new LineBorder(new Color(0, 0, 0)));
 		panel_setAlarm.setBackground(Color.WHITE);
 		panel_setAlarm.setBounds(100, 149, 228, 65);
