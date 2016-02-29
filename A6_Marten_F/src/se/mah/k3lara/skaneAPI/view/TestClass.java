@@ -14,10 +14,13 @@ import se.mah.k3lara.skaneAPI.xmlparser.Parser;
 public class TestClass {
 
 	public static void main(String[] args) {
+		//Constructs a search URL formatted according to API guidelines. Constants.getURL returns formatted URL.
+		//Searches for trips from Malmö C to Lund C (80000 and 81216 respectively), and asks for the first 20 results);
 		String searchURL = Constants.getURL("80000","81216",20); //Malmö C = 80000,  Lund C, 81216 Malmö Gatorg 80100, Hässleholm C 93070
 		System.out.println(searchURL);
 		System.out.println("// Results when searching:");
 		
+		//Queries skanetrafiken using a formatted URL, and constructs a Journeys instance from results.
 		Journeys journeys = Parser.getJourneys(searchURL);
 		for (Journey journey : journeys.getJourneys()) {
 			System.out.print(journey.getStartStation()+" - ");
@@ -27,7 +30,9 @@ public class TestClass {
 		} 
 		
 	   System.out.println("// Stations when searching for stations containing \"Malm\"");
+	   //Creates a new ArrayList, intended to hold Station objects.
 		ArrayList<Station> searchStations = new ArrayList<Station>(); 
+		//Searches for all stations that contains "Malm" in name, and places results in the searchStations ArrayList. The "ö" of Malmö omitted due to ascii limitations.
 		searchStations.addAll(Parser.getStationsFromURL("Malm"));
 		for (Station s: searchStations){
 			System.out.println(s.getStationName() +" number:" +s.getStationNbr());

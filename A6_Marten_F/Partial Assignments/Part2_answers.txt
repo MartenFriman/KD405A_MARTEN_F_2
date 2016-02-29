@@ -1,0 +1,11 @@
+1. Från Malmö C till Lund C
+2. Genom att lägga till "&NoOf=5" i slutet av queryn
+3. 
+Journeys innehåller alla resor - Journey, med all relaterad information
+RouteLinks innehåller (i likhet med Journeys) resans alla delresor - RouteLink, som innehåller all information relaterad till delresan
+
+Det finns endast en <Journeys>, som innehåller en eller fler <Journey>.
+Journey innehåller i sin tur endast en <RouteLinks> som innehåller en eller fler <Routelink>.
+
+4. NoOfChanges innehåller antal byten. Den är placerad under Journey.
+5. <InteEnTagg></InteEnTagg>
