@@ -42,7 +42,7 @@ public class testPicture extends JFrame {
 		setContentPane(contentPane);
 		
 		JLabel lblNewLabel = new JLabel("New label");
-		lblNewLabel.setIcon(new ImageIcon("C:\\Users\\M\u00E5rten\\Documents\\GitHub\\KD405A_MARTEN_F_2\\testPS\\pics\\Mock_up_colour.png"));
+		lblNewLabel.setIcon(new ImageIcon(testPicture.class.getResource("/Assets/Mock_up_colour.png")));
 		contentPane.add(lblNewLabel, BorderLayout.CENTER);
 	}
 
